@@ -26,5 +26,29 @@ def etrx(request):
 def biomed(request):
     return render(request, 'biomeds.html')
 
+def bee(request):
+    return render(request, 'bee.html')
+
+def chemistry(request):
+    return render(request, 'chemistry.html')
+
+def cprog(request):
+    return render(request, 'cprog.html')
+
+def engdrawing(request):
+    return render(request, 'engdrawing.html')
+
+def math1(request):
+    return render(request, 'math1.html')
+
+def mechanics(request):
+    return render(request, 'mechanics.html')
+
+def miniproject1(request):
+    return render(request, 'miniproject1.html')
+
+def physics(request):
+    return render(request, 'physics.html')
+
 
 
