@@ -13,9 +13,9 @@ def lab7Ainfo(request):
     lab7a_pc_list = Lab7A.objects.all()
     return render(request, 'inft.html', {'lab7a_pc_list': lab7a_pc_list})
 
-# def labBAinfo(request):
-#     lab7a_pc_list = Lab7A.objects.all()
-#     return render(request, 'inft.html', {'lab7a_pc_list': lab7a_pc_list})
+def labBinfo(request):
+    lab7b_pc_list = Lab7B.objects.all()
+    return render(request, 'inft.html', {'lab7b_pc_list': lab7b_pc_list})
 
 
 def upload(request):
