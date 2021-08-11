@@ -11,12 +11,15 @@ from .models import Lab7A
 
 def lab7Ainfo(request):
     lab7a_pc_list = Lab7A.objects.all()
-    return render(request, 'inft.html', {'lab7a_pc_list': lab7a_pc_list})
+    return render(request, 'lab7a.html', {'lab7a_pc_list': lab7a_pc_list})
 
-def labBinfo(request):
-    lab7b_pc_list = Lab7B.objects.all()
-    return render(request, 'inft.html', {'lab7b_pc_list': lab7b_pc_list})
+# def labBinfo(request):
+#     lab7b_pc_list = Lab7B.objects.all()
+#     return render(request, 'lab7a.html', {'lab7b_pc_list': lab7b_pc_list})
 
+def lab7aswinfo(request):
+    lab7aswinfo_list = Lab7A_SW_Inst.objects.all()
+    return render(request, 'lab7aswinfo.html', {'lab7aswinfo_list': lab7aswinfo_list})
 
 def upload(request):
     if request.method == "POST":
@@ -61,16 +64,11 @@ def index(request):
 def about(request):
     return render(request, 'about.html')
 
+def lab7aswinfo(request):
+    return render(request, 'lab7aswinfo.html')
 
-
-def inft(request):
-    return render(request, 'inft.html')
-# def inftse(request):
-#     return render(request, 'inftse.html')
-# def inftte(request):
-#     return render(request, 'inftte.html')
-# def inftbe(request):
-#     return render(request, 'inftbe.html')
+def lab7a(request):
+    return render(request, 'lab7a.html')
 
 
 class UploadFileForm(forms.Form):

@@ -6,9 +6,9 @@ urlpatterns = [
     path("", views.index, name='index'),
     path("index", views.index, name='index'),
     path("about", views.about, name='about'),
-    path("firstyear", views.firstyear, name='firstyear'),
-    path("inft", views.lab7Ainfo, name='inft'),
+    path("lab7a", views.lab7Ainfo, name='lab7a'),
     path("Upload", views.upload, name='upload'),
+    path('lab7aswinfo', views.lab7aswinfo, name='lab7aswinfo'),
 
 
     
