@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{%block title%}INFT {% endblock title%}
+{%block body%}
+
+{% comment %} <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+        <div class="card h-100" class="card h-100"><a href="/inftse" class="text-decoration-none">
+                <img src="https://source.unsplash.com/iar-afB0QQw/1600x900" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Second year</h5>
+                    <p class="card-text">This is a short card.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100" class="card h-100"><a href="/inftte" class="text-decoration-none">
+                <img src="" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Third Year</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100" class="card h-100"><a href="/infbe" class="text-decoration-none">
+                <img src="" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Fourth Year</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div> {% endcomment %}
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+<body>
+<table>
+  <tr>
+    <th>Computer Name</th>
+    <th>Processor</th>
+    <th>RAM</th>
+    <th>Hard Disk</th>
+    <th>Motherboard</th>
+    <th>Basic OS</th>
+    <th>Special Purpose</th>
+    <th>Date of Purchase</th>
+    <th>Working Status</th>
+  </tr>
+
+  {% for Lab7A in lab7a_pc_list %}
+  <tr>
+    <td>{{ Lab7A.ComputerName }}</td>
+    <td>{{ Lab7A.Processor }}</td>
+    <td>{{ Lab7A.RAM }}</td>
+    <td>{{ Lab7A.HardDisk }}</td>
+    <td>{{ Lab7A.MotherBoard }}</td>
+    <td>{{ Lab7A.Basic_OS }}</td>
+    <td>{{ Lab7A.SpecialPurpose }}</td>
+    <td>{{ Lab7A.DateOfPurchase }}</td>
+    <td>{{ Lab7A.WorkingStatus }}</td>
+  </tr>  
+  {% endfor %}
+</table>
+
+</body>
+{% endblock body%}
