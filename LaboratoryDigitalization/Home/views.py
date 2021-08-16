@@ -13,13 +13,17 @@ def lab7Ainfo(request):
     lab7a_pc_list = Lab7A.objects.all()
     return render(request, 'lab7a.html', {'lab7a_pc_list': lab7a_pc_list})
 
-# def labBinfo(request):
-#     lab7b_pc_list = Lab7B.objects.all()
-#     return render(request, 'lab7a.html', {'lab7b_pc_list': lab7b_pc_list})
+def lab7Binfo(request):
+    lab7b_pc_list = Lab7B.objects.all()
+    return render(request, 'lab7b.html', {'lab7b_pc_list': lab7b_pc_list})
 
 def lab7aswinfo(request):
     lab7aswinfo_list = Lab7A_SW_Inst.objects.all()
     return render(request, 'lab7aswinfo.html', {'lab7aswinfo_list': lab7aswinfo_list})
+
+def lab7bswinfo(request):
+    lab7bswinfo_list = Lab7B_SW_Inst.objects.all()
+    return render(request, 'lab7bswinfo.html', {'lab7bswinfo_list': lab7bswinfo_list})
 
 def upload(request):
     if request.method == "POST":
@@ -67,8 +71,14 @@ def about(request):
 def lab7aswinfo(request):
     return render(request, 'lab7aswinfo.html')
 
+def lab7bswinfo(request):
+    return render(request, 'lab7bswinfo.html')
+
 def lab7a(request):
     return render(request, 'lab7a.html')
+
+def lab7b(request):
+    return render(request, 'lab7b.html')
 
 
 class UploadFileForm(forms.Form):

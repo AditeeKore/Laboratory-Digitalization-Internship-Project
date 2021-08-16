@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{%block title%}INFT {% endblock title%}
+{%block title%}Lab 7B {% endblock title%}
 {%block body%}
 
 <style>
@@ -22,7 +22,8 @@ tr:nth-child(even) {
 </style>
 
 <body>
-<h3 align='center'>LAB 7A</h3>
+
+<h3 align='center'>LAB 7B</h3>
 <table>
   <tr>
     <th>Computer Name</th>
@@ -36,17 +37,17 @@ tr:nth-child(even) {
     <th>Working Status</th>
   </tr>
 
-  {% for Lab7A in lab7a_pc_list %}
+  {% for Lab7B in lab7b_pc_list %}
   <tr>
-    <td>{{ Lab7A.ComputerName }}</td>
-    <td>{{ Lab7A.Processor }}</td>
-    <td>{{ Lab7A.RAM }}</td>
-    <td>{{ Lab7A.HardDisk }}</td>
-    <td>{{ Lab7A.MotherBoard }}</td>
-    <td>{{ Lab7A.Basic_OS }}</td>
-    <td>{{ Lab7A.SpecialPurpose }}</td>
-    <td>{{ Lab7A.DateOfPurchase }}</td>
-    <td>{{ Lab7A.WorkingStatus }}</td>
+    <td>{{ Lab7B.ComputerName }}</td>
+    <td>{{ Lab7B.Processor }}</td>
+    <td>{{ Lab7B.RAM }}</td>
+    <td>{{ Lab7B.HardDisk }}</td>
+    <td>{{ Lab7B.MotherBoard }}</td>
+    <td>{{ Lab7B.Basic_OS }}</td>
+    <td>{{ Lab7B.SpecialPurpose }}</td>
+    <td>{{ Lab7B.DateOfPurchase }}</td>
+    <td>{{ Lab7B.WorkingStatus }}</td>
   </tr>  
   {% endfor %}
 </table>

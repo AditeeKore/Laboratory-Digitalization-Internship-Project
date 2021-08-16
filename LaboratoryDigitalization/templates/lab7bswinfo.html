@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{%block title%}INFT {% endblock title%}
+{%block body%}
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+<body>
+<h3 align='center'>LAB 7A</h3>
+<table>
+  <tr>
+    <th>Software Installed</th>
+    <th>Version</th>
+  </tr>
+
+  {% for Lab7B_SW_Inst in lab7bswinfo_list %}
+  <tr>
+    <td>{{ Lab7B_SW_Inst.SoftwareInstalled }}</td>
+    <td>{{ Lab7B_SW_Inst.Version }}</td>
+  </tr>  
+  {% endfor %}
+</table>
+
+</body>
+{% endblock body%}
