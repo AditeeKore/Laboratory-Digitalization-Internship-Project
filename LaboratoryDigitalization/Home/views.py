@@ -80,6 +80,8 @@ def lab7a(request):
 def lab7b(request):
     return render(request, 'lab7b.html')
 
+def lab7(request):
+    return render(request, 'lab7.html')
 
 class UploadFileForm(forms.Form):
     file = forms.FileField()
