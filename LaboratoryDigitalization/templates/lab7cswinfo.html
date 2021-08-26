@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{%block title%}LAB7A SW {% endblock title%}
+{%block title%}LAB7C SW {% endblock title%}
 {%block body%}
 
 <style>
@@ -22,17 +22,17 @@ tr:nth-child(even) {
 </style>
 
 <body>
-<h3 align='center'>LAB 7A Softwares Installed</h3>
+<h3 align='center'>LAB 7C Softwares Installed</h3>
 <table>
   <tr>
     <th>SoftwareInstalled</th>
     <th>Version</th>
   </tr>
 
-  {% for Lab7A_SW_Inst in lab7ainfo_list %}
+  {% for Lab7C_SW_Inst in lab7cinfo_list %}
   <tr>
-    <td>{{ Lab7A_SW_Inst.SoftwareInstalled }}</td>
-    <td>{{ Lab7A_SW_Inst.Version }}</td>
+    <td>{{ Lab7C_SW_Inst.SoftwareInstalled }}</td>
+    <td>{{ Lab7C_SW_Inst.Version }}</td>
   </tr>  
   {% endfor %}
 </table>
