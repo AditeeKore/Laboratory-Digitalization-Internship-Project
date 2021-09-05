@@ -91,3 +91,10 @@ class Lab7D_SW_Inst(models.Model):
 class Lab7E_SW_Inst(models.Model):
     SoftwareInstalled = models.CharField(max_length=50)
     Version = models.CharField(max_length=20, null=True)
+
+# class Upload_File(models.Model):
+#     file = models.FileField(upload_to='uploads')
+
+class Lab_Timetable(models.Model):
+    Lab = models.CharField(max_length=30)
+    tt_file = models.FileField()
