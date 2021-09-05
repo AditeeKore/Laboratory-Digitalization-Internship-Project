@@ -50,27 +50,10 @@ def lab7eswinfo(request):
     return render(request, 'lab7eswinfo.html', {'lab7einfo_list': lab7einfo_list})
 
 
-def upload(request):
-    if request.method == "POST":
-        upload_resource = uploadresource()
-        dataset = Dataset()
-        new_lab= request.FILES['myfile']
-
-        if not new_lab.name.endswith('xlsx'):
-            messages.info(request, 'wrong format')
-            return render(request, 'upload.html')
-
-        imported_data = dataset.load(new_lab.read(),format='xlsx')
-        for data in imported_data:
-            value = upload(
-                data[0],
-                # data[1],
-                # data[2],
-                # data[3],
-                # data[4],
-            )
-            value.save()
-    return render(request, 'upload.html')
+# def upload(request):
+#     if request.method == "POST":
+        # upload_file = 
+        
 
 
 
