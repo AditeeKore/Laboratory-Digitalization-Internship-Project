@@ -1,12 +1,14 @@
 from django.contrib.messages.api import warning
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import redirect, render, HttpResponse
 from django.http import HttpResponseBadRequest
 from django import forms
-from .models import AllLabinfo, Lab7A, Lab7B, Lab7C, Lab7D, Lab7E, Lab7A_SW_Inst, Lab7B_SW_Inst, Lab7C_SW_Inst, Lab7D_SW_Inst, Lab7E_SW_Inst
+from .models import AllLabinfo, Lab7A, Lab7B, Lab7C, Lab7D, Lab7E, Lab7A_SW_Inst, Lab7B_SW_Inst, Lab7C_SW_Inst, Lab7D_SW_Inst, Lab7E_SW_Inst, tt_file
 from .resources import uploadresource
 from django.contrib import messages
 from tablib import Dataset
 from .models import Lab7A
+from .forms import tt_file_form
+
 # Create your views here.
 
 def lab7Ainfo(request):
@@ -50,11 +52,25 @@ def lab7eswinfo(request):
     return render(request, 'lab7eswinfo.html', {'lab7einfo_list': lab7einfo_list})
 
 
+def upload(request):
+    if request.method == "POST":
+        form = tt_file_form(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'New file uploaded')
+            # return redirect('timetable.html')
+    else:
+        form = tt_file_form()
+    return render(request, 'upload.html', {'form': form})
+
 # def upload(request):
 #     if request.method == "POST":
-        # upload_file = 
-        
-
+#         lab_no = request.POST.get('lab_no')
+#         tt_pdf = request.POST.get('pdf')
+#         upload = tt_file(lab_no=lab_no, tt_pdf=tt_pdf)
+#         upload.save()
+#         messages.success(request, 'New file uploaded')
+#     return render(request, 'upload.html')
 
 
     #     form = UploadFileForm(request.POST, request.FILES)
@@ -90,6 +106,10 @@ def lab7b(request):
 
 def lab7(request):
     return render(request, 'lab7.html')
+
+def timetable(request):
+    timetable_file = tt_file.objects.all()
+    return render(request, 'timetable.html', {'timetable_file': timetable_file})
 
 class UploadFileForm(forms.Form):
     file = forms.FileField()

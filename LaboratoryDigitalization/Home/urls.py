@@ -1,6 +1,9 @@
 from django.contrib import admin
 from django.urls import path
 from Home import views
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path("", views.index, name='index'),
@@ -13,18 +16,16 @@ urlpatterns = [
     path("lab7d", views.lab7Dinfo, name='lab7d'),
     path("lab7e", views.lab7Einfo, name='lab7e'),
     path("upload", views.upload, name='upload'),
+    path("timetable", views.timetable, name='timetable'),
     path('lab7aswinfo', views.lab7aswinfo, name='lab7aswinfo'),
     path('lab7bswinfo', views.lab7bswinfo, name='lab7bswinfo'),
     path('lab7cswinfo', views.lab7cswinfo, name='lab7cswinfo'),
     path('lab7dswinfo', views.lab7dswinfo, name='lab7dswinfo'),
     path('lab7eswinfo', views.lab7eswinfo, name='lab7eswinfo'),
-    
-
-    
-
-
-    
-
-
 
 ]
+    
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    
+

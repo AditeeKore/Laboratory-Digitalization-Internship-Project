@@ -95,6 +95,12 @@ class Lab7E_SW_Inst(models.Model):
 # class Upload_File(models.Model):
 #     file = models.FileField(upload_to='uploads')
 
-class Lab_Timetable(models.Model):
-    Lab = models.CharField(max_length=30)
-    tt_file = models.FileField()
+# class Lab_Timetable(models.Model):
+#     Lab = models.CharField(max_length=30)
+#     tt_file = models.FileField()
+
+class tt_file(models.Model):
+    lab_no = models.CharField(max_length=10, unique=True)
+    tt_pdf = models.FileField(upload_to='uploads/timetable')
+    def __str__(self):
+        return self.lab_no

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
-from .models import AllLabinfo, Lab7A, Lab7A_SW_Inst, Lab7B_SW_Inst, Lab7C_SW_Inst, Lab7D_SW_Inst, Lab7E_SW_Inst, Lab7B, Lab7C, Lab7D, Lab7E
+from .models import AllLabinfo, Lab7A, Lab7A_SW_Inst, Lab7B_SW_Inst, Lab7C_SW_Inst, Lab7D_SW_Inst, Lab7E_SW_Inst, Lab7B, Lab7C, Lab7D, Lab7E, tt_file
 
 # Register your models here.
 
@@ -47,3 +47,5 @@ class Lab7Dswinfo(ImportExportModelAdmin):
 @admin.register(Lab7E_SW_Inst)
 class Lab7Eswinfo(ImportExportModelAdmin):
     list_display = ('SoftwareInstalled', 'Version')
+
+admin.site.register(tt_file)

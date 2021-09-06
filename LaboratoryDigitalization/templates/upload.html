@@ -3,26 +3,11 @@
 {%block title%}Upload {% endblock title%}
 {%block body%}
 
-<form action="{% url "upload" %}" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <div class="form-group mb-4 mt-3">
-        <label for="exampleFormControlFile1">Excel file ONLY !</label>
-        <input type="file" title="Upload excel file" name="myfile"
- {% comment %} class="form-control-file" id="exampleFormControlFile1" required="required"> {% endcomment %}
-    </div>
-    <input type="submit" value="Upload" name="myfile" class="mt-4 mb-4 btn btn-primary">
+<h3>Upload timetable file</h3>
+<form method="post" enctype="multipart/form-data">
+{% csrf_token %}
+{{ form }}
+<button type="submit" class="btn btn-primary">Upload</button>
 </form>
- 
-{% block content %}
-  <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <input type="file" name="myfile">
-    <button type="submit">Upload</button>
-  </form>
 
-  {% if uploaded_file_url %}
-    <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
-  {% endif %}
-
-  <p><a href="{% url 'home' %}">Return to home</a></p>
 {% endblock %}
