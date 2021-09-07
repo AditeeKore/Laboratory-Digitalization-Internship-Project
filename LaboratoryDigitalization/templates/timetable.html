@@ -38,7 +38,7 @@ tr:hover {
     {% for tt_file in timetable_file %}
     <tr>
         <td>{{ tt_file.lab_no }}</td>
-        <td><a href="{{ tt_file.tt_pdf }}" class="btn btn-primary btn-sm" target="_blank">
+        <td><a href="{{ tt_file.tt_pdf.url }}" class="btn btn-primary btn-sm" target="_blank">
         Download file</a>
         </td>
     </tr>

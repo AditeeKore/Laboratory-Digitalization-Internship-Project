@@ -102,5 +102,6 @@ class Lab7E_SW_Inst(models.Model):
 class tt_file(models.Model):
     lab_no = models.CharField(max_length=10, unique=True)
     tt_pdf = models.FileField(upload_to='uploads/timetable')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return self.lab_no

@@ -51,40 +51,16 @@ def lab7eswinfo(request):
     lab7einfo_list = Lab7E_SW_Inst.objects.all()
     return render(request, 'lab7eswinfo.html', {'lab7einfo_list': lab7einfo_list})
 
-
 def upload(request):
     if request.method == "POST":
         form = tt_file_form(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             messages.success(request, 'New file uploaded')
-            # return redirect('timetable.html')
+            # return redirect("timetable.html")
     else:
         form = tt_file_form()
     return render(request, 'upload.html', {'form': form})
-
-# def upload(request):
-#     if request.method == "POST":
-#         lab_no = request.POST.get('lab_no')
-#         tt_pdf = request.POST.get('pdf')
-#         upload = tt_file(lab_no=lab_no, tt_pdf=tt_pdf)
-#         upload.save()
-#         messages.success(request, 'New file uploaded')
-#     return render(request, 'upload.html')
-
-
-    #     form = UploadFileForm(request.POST, request.FILES)
-    #     if form.is_valid():
-    #         request.FILES['file'].save_to_database(
-    #             model=upload,
-    #             mapdict=['Lab', 'NumberofPCs', 'BasicConfig', 'PCspurchasedinYr', 'OS', 'SpecialSoftware'])
-    #         return HttpResponse("OK")
-    #     else:
-    #         return HttpResponseBadRequest()
-    # else:
-    #     return render(request, 'upload.html', {})
-
-
 
 def index(request):
     return render(request, 'index.html')
