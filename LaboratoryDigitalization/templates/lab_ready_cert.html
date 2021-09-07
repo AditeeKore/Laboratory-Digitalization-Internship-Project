@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{%block title%}timetables {% endblock title%}
+{%block body%}
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+th{
+  background-color: #5F9EA0
+}
+tr:hover {
+  background-color: lavender;
+}
+//tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+
+<h1>Lab Readyness Certificate</h1>
+
+<table class='table'>
+    <tr>
+        <th>Lab No</th>
+        <th>File</th>
+    </tr>
+    {% for lab_ready_cert in cert_file %}
+    <tr>
+        <td>{{ lab_ready_cert.lab_no }}</td>
+        <td><a href="{{ lab_ready_cert.tt_pdf.url }}" class="btn btn-primary btn-sm" target="_blank">
+        Download file</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

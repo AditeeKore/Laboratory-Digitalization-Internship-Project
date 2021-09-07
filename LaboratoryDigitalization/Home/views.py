@@ -2,12 +2,12 @@ from django.contrib.messages.api import warning
 from django.shortcuts import redirect, render, HttpResponse
 from django.http import HttpResponseBadRequest
 from django import forms
-from .models import AllLabinfo, Lab7A, Lab7B, Lab7C, Lab7D, Lab7E, Lab7A_SW_Inst, Lab7B_SW_Inst, Lab7C_SW_Inst, Lab7D_SW_Inst, Lab7E_SW_Inst, tt_file
+from .models import AllLabinfo, Lab7A, Lab7B, Lab7C, Lab7D, Lab7E, Lab7A_SW_Inst, Lab7B_SW_Inst, Lab7C_SW_Inst, Lab7D_SW_Inst, Lab7E_SW_Inst, tt_file, lab_ready_cert
 from .resources import uploadresource
 from django.contrib import messages
 from tablib import Dataset
 from .models import Lab7A
-from .forms import tt_file_form
+from .forms import tt_file_form, lab_ready_cert_form
 
 # Create your views here.
 
@@ -57,10 +57,19 @@ def upload(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'New file uploaded')
-            # return redirect("timetable.html")
     else:
         form = tt_file_form()
     return render(request, 'upload.html', {'form': form})
+
+def cert_upload(request):            
+    if request.method == "POST":
+        form = lab_ready_cert_form(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'New Certificate file uploaded')
+    else:
+        form = lab_ready_cert_form()
+    return render(request, 'cert_upload.html', {'form': form})
 
 def index(request):
     return render(request, 'index.html')
@@ -86,6 +95,11 @@ def lab7(request):
 def timetable(request):
     timetable_file = tt_file.objects.all()
     return render(request, 'timetable.html', {'timetable_file': timetable_file})
+
+def lab_ready_cert(request):
+    cert_file = lab_ready_cert.objects.all()
+    return render(request, 'lab_ready_cert.html', {'cert_file': cert_file})
+    
 
 class UploadFileForm(forms.Form):
     file = forms.FileField()

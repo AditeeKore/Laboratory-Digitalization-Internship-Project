@@ -92,16 +92,16 @@ class Lab7E_SW_Inst(models.Model):
     SoftwareInstalled = models.CharField(max_length=50)
     Version = models.CharField(max_length=20, null=True)
 
-# class Upload_File(models.Model):
-#     file = models.FileField(upload_to='uploads')
-
-# class Lab_Timetable(models.Model):
-#     Lab = models.CharField(max_length=30)
-#     tt_file = models.FileField()
-
 class tt_file(models.Model):
     lab_no = models.CharField(max_length=10, unique=True)
     tt_pdf = models.FileField(upload_to='uploads/timetable')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.lab_no
+
+class lab_ready_cert(models.Model):
+    lab_no = models.CharField(max_length=10, unique=True)
+    cert_pdf = models.FileField(upload_to='uploads/lab_ready_cert')
     uploaded_at = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return self.lab_no
