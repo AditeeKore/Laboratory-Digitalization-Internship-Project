@@ -96,10 +96,9 @@ def timetable(request):
     timetable_file = tt_file.objects.all()
     return render(request, 'timetable.html', {'timetable_file': timetable_file})
 
-def lab_ready_cert(request):
+def lab_cert(request):
     cert_file = lab_ready_cert.objects.all()
-    return render(request, 'lab_ready_cert.html', {'cert_file': cert_file})
-    
+    return render(request, 'lab_cert.html', {'cert_file': cert_file})  
 
 class UploadFileForm(forms.Form):
     file = forms.FileField()

@@ -38,7 +38,7 @@ tr:hover {
     {% for lab_ready_cert in cert_file %}
     <tr>
         <td>{{ lab_ready_cert.lab_no }}</td>
-        <td><a href="{{ lab_ready_cert.tt_pdf.url }}" class="btn btn-primary btn-sm" target="_blank">
+        <td><a href="{{ lab_ready_cert.cert_pdf.url }}" class="btn btn-primary btn-sm" target="_blank">
         Download file</a>
         </td>
     </tr>
