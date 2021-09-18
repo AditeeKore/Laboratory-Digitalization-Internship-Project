@@ -117,8 +117,35 @@ def lab7a(request):
 def lab7b(request):
     return render(request, 'lab7b.html')
 
+def labcc(request):
+    return render(request, 'labcc.html')    
+
 def lab7(request):
     return render(request, 'lab7.html')
+
+def lab5(request):
+    return render(request, 'lab5.html')
+
+def labm(request):
+    return render(request, 'labm.html')
+
+def labm2(request):
+    return render(request, 'labm2.html')
+
+def labm3(request):
+    return render(request, 'labm3.html')
+
+def labm4(request):
+    return render(request, 'labm4.html')
+
+def labm5(request):
+    return render(request, 'labm5.html')
+
+def labm6(request):
+    return render(request, 'labm6.html')  
+
+def lab11(request):
+    return render(request, 'lab11.html')  
 
 def timetable(request):
     timetable_file = tt_file.objects.all()
