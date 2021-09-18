@@ -8,28 +8,52 @@ from django.contrib import messages
 from tablib import Dataset
 from .models import Lab7A
 from .forms import tt_file_form, lab_ready_cert_form
+from django.contrib.admin.views.decorators import staff_member_required
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User, auth
+
 
 # Create your views here.
 
+def logout(request):
+    auth.logout(request)
+    return redirect('/index')
+
 def lab7Ainfo(request):
     lab7a_pc_list = Lab7A.objects.all()
-    return render(request, 'lab7a.html', {'lab7a_pc_list': lab7a_pc_list})
+    return render(request, 'lab7acompinfo.html', {'lab7a_pc_list': lab7a_pc_list})
+
+def lab7A(request):
+    return render(request, 'lab7a.html')
+
+def lab7B(request):
+    return render(request, 'lab7b.html')
+
+def lab7C(request):
+    return render(request, 'lab7c.html')
+
+def lab7D(request):
+    return render(request, 'lab7d.html')
+
+def lab7E(request):
+    return render(request, 'lab7e.html')
+
 
 def lab7Binfo(request):
     lab7b_pc_list = Lab7B.objects.all()
-    return render(request, 'lab7b.html', {'lab7b_pc_list': lab7b_pc_list})
+    return render(request, 'lab7bcompinfo.html', {'lab7b_pc_list': lab7b_pc_list})
 
 def lab7Cinfo(request):
     lab7c_pc_list = Lab7C.objects.all()
-    return render(request, 'lab7c.html', {'lab7c_pc_list': lab7c_pc_list})
+    return render(request, 'lab7ccompinfo.html', {'lab7c_pc_list': lab7c_pc_list})
 
 def lab7Dinfo(request):
     lab7d_pc_list = Lab7D.objects.all()
-    return render(request, 'lab7d.html', {'lab7d_pc_list': lab7d_pc_list})
+    return render(request, 'lab7dcompinfo.html', {'lab7d_pc_list': lab7d_pc_list})
 
 def lab7Einfo(request):
     lab7e_pc_list = Lab7E.objects.all()
-    return render(request, 'lab7e.html', {'lab7e_pc_list': lab7e_pc_list})
+    return render(request, 'lab7ecompinfo.html', {'lab7e_pc_list': lab7e_pc_list})
 
 def lab7aswinfo(request):
     lab7ainfo_list = Lab7A_SW_Inst.objects.all()
@@ -51,6 +75,8 @@ def lab7eswinfo(request):
     lab7einfo_list = Lab7E_SW_Inst.objects.all()
     return render(request, 'lab7eswinfo.html', {'lab7einfo_list': lab7einfo_list})
 
+@login_required(login_url='/admin/login/?next=/admin/')
+@staff_member_required
 def upload(request):
     if request.method == "POST":
         form = tt_file_form(request.POST, request.FILES)
@@ -61,6 +87,8 @@ def upload(request):
         form = tt_file_form()
     return render(request, 'upload.html', {'form': form})
 
+@login_required(login_url='/admin/login/?next=/admin/')
+@staff_member_required
 def cert_upload(request):            
     if request.method == "POST":
         form = lab_ready_cert_form(request.POST, request.FILES)

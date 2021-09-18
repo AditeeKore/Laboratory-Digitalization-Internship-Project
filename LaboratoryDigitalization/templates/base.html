@@ -26,20 +26,24 @@
           <a class="nav-link text-white" href="/about">About Us</a>
         </li>
         <li class="nav-item">
-          <a class="float-right nav-link text-white " href="/userlogin" >Log In</a>
+          <a class="float-right nav-link text-white " href="/admin" >Log In</a>
         </li>
         <li class="nav-item">
-          <a class="float-right nav-link text-white " href="/upload" >Upload</a>
+          <a class="float-right nav-link text-white " href="/upload" >Upload Timetable</a>
         </li>
         <li class="nav-item">
           <a class="float-right nav-link text-white " href="/timetable" >Timetable</a>
         </li>
         <li class="nav-item">
-          <a class="float-right nav-link text-white " href="/cert_upload" >Certificate Upload</a>
+          <a class="float-right nav-link text-white " href="/cert_upload" >Upload Certificate</a>
         </li>
         <li class="nav-item">
           <a class="float-right nav-link text-white " href="/lab_cert" >Lab Readyness Certificate</a>
         </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="float-right nav-link text-white " href="/logout" >Logout</a>
+        </li>{% endif %}
       </ul>
     </div>
   </div>

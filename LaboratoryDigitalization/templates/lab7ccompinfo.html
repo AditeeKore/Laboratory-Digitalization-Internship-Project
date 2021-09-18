@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{%block title%}LAB7C {% endblock title%}
+{%block body%}
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+th{
+background-color: #5F9EA0
+}
+tr:hover {
+  background-color: lavender;
+}
+//tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+<body>
+<h3 align='center'>LAB 7C</h3>
+<table>
+  <tr>
+    <th>Computer Name</th>
+    <th>Processor</th>
+    <th>RAM</th>
+    <th>Hard Disk</th>
+    <th>Motherboard</th>
+    <th>Basic OS</th>
+    <th>Special Purpose</th>
+    <th>Date of Purchase</th>
+    <th>Working Status</th>
+  </tr>
+
+  {% for Lab7C in lab7c_pc_list %}
+  <tr>
+    <td>{{ Lab7C.ComputerName }}</td>
+    <td>{{ Lab7C.Processor }}</td>
+    <td>{{ Lab7C.RAM }}</td>
+    <td>{{ Lab7C.HardDisk }}</td>
+    <td>{{ Lab7C.MotherBoard }}</td>
+    <td>{{ Lab7C.Basic_OS }}</td>
+    <td>{{ Lab7C.SpecialPurpose }}</td>
+    <td>{{ Lab7C.DateOfPurchase }}</td>
+    <td>{{ Lab7C.WorkingStatus }}</td>
+  </tr>  
+  {% endfor %}
+</table>
+
+</body>
+{% endblock body%}
