@@ -138,13 +138,55 @@ def lab7b(request):
     return render(request, 'lab7b.html')
 
 def labcc(request):
-    return render(request, 'labcc.html')    
+    return render(request, 'labcc.html')
+
+def labcc1(request):
+    return render(request, 'labcc1.html')
+
+def labcc1swinfo(request):
+    return render(request, 'labcc1swinfo.html')
+
+def labcc1compinfo(request):
+    return render(request, 'labcc1compinfo.html')
+
+def labcc2(request):
+    return render(request, 'labcc2.html')
+
+def labcc2swinfo(request):
+    return render(request, 'labcc2swinfo.html')
+
+def labcc2compinfo(request):
+    return render(request, 'labcc2compinfo.html')
+
+def labcc3swinfo(request):
+    return render(request, 'labcc3swinfo.html')
+
+def labcc3compinfo(request):
+    return render(request, 'labcc3compinfo.html')
+
+def labcc3(request):
+    return render(request, 'labcc3.html')   
 
 def lab7(request):
     return render(request, 'lab7.html')
 
 def lab5(request):
     return render(request, 'lab5.html')
+
+def lab5a(request):
+    return render(request, 'lab5a.html')
+
+def lab5b(request):
+    return render(request, 'lab5b.html')
+
+def lab5c(request):
+    return render(request, 'lab5c.html')
+
+def lab5d(request):
+    return render(request, 'lab5d.html')
+
+def lab5e(request):
+    return render(request, 'lab5e.html')
 
 def labm(request):
     return render(request, 'labm.html')
@@ -161,11 +203,59 @@ def labm4(request):
 def labm5(request):
     return render(request, 'labm5.html')
 
+def labm5aswinfo(request):
+    return render(request, 'labm5aswinfo.html')
+
+def labm5bswinfo(request):
+    return render(request, 'labm5bswinfo.html')
+
+def labm5cswinfo(request):
+    return render(request, 'labm5cswinfo.html')
+
+def labm5dswinfo(request):
+    return render(request, 'labm5dswinfo.html')
+
+def labm5eswinfo(request):
+    return render(request, 'labm5eswinfo.html')
+
+def labm5acompinfo(request):
+    return render(request, 'labm5acompinfo.html')
+
+def labm5bcompinfo(request):
+    return render(request, 'labm5bcompinfo.html')
+
+def labm5ccompinfo(request):
+    return render(request, 'labm5ccompinfo.html')
+
+def labm5dcompinfo(request):
+    return render(request, 'labm5dcompinfo.html')
+
+def labm5ecompinfo(request):
+    return render(request, 'labm5ecompinfo.html')
+
 def labm6(request):
     return render(request, 'labm6.html')  
 
 def lab11(request):
     return render(request, 'lab11.html')  
+
+def lab11a(request):
+    return render(request, 'lab11a.html') 
+
+def lab11b(request):
+    return render(request, 'lab11b.html') 
+
+def lab11aswinfo(request):
+    return render(request, 'lab11aswinfo.html') 
+
+def lab11bswinfo(request):
+    return render(request, 'lab11bswinfo.html') 
+
+def lab11acompinfo(request):
+    return render(request, 'lab11acompinfo.html') 
+
+def lab11bcompinfo(request):
+    return render(request, 'lab11bcompinfo.html') 
 
 def timetable(request):
     timetable_file = tt_file.objects.all()
