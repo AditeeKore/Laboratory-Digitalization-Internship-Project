@@ -4,65 +4,67 @@
 {%block body%}
 
 <style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 90%;
-  margin-right: auto;
-  margin-left: auto;
-}
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+  }
 
-td {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
- 
-}
-th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-  background-color: #5F9EA0
-}
+  td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
 
-//tr:nth-child(even) {
+  }
+
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    background-color: #5F9EA0
+  }
+
+  //tr:nth-child(even) {
   background-color: #dddddd;
-}
-tr:hover {background-color: #E6E6FA;
-}
+  }
 
+  tr:hover {
+    background-color: #E6E6FA;
+  }
 </style>
 
 <body>
 
-<h3 align='center'>LAB 7A</h3>
-<table>
-  <tr>
-    <th>Computer Name</th>
-    <th>Processor</th>
-    <th>RAM</th>
-    <th>Hard Disk</th>
-    <th>Motherboard</th>
-    <th>Basic OS</th>
-    <th>Special Purpose</th>
-    <th>Date of Purchase</th>
-    <th>Working Status</th>
-  </tr>
+  <h3 align='center'>LAB 7A</h3>
+  <table>
+    <tr>
+      <th>Computer Name</th>
+      <th>Processor</th>
+      <th>RAM</th>
+      <th>Hard Disk</th>
+      <th>Motherboard</th>
+      <th>Basic OS</th>
+      <th>Special Purpose</th>
+      <th>Date of Purchase</th>
+      <th>Working Status</th>
+    </tr>
 
-  {% for Lab7A in lab7a_pc_list %}
-  <tr>
-    <td>{{ Lab7A.ComputerName }}</td>
-    <td>{{ Lab7A.Processor }}</td>
-    <td>{{ Lab7A.RAM }}</td>
-    <td>{{ Lab7A.HardDisk }}</td>
-    <td>{{ Lab7A.MotherBoard }}</td>
-    <td>{{ Lab7A.Basic_OS }}</td>
-    <td>{{ Lab7A.SpecialPurpose }}</td>
-    <td>{{ Lab7A.DateOfPurchase }}</td>
-    <td>{{ Lab7A.WorkingStatus }}</td>
-  </tr>  
-  {% endfor %}
-</table>
+    {% for Lab7A in lab7a_pc_list %}
+    <tr>
+      <td>{{ Lab7A.ComputerName }}</td>
+      <td>{{ Lab7A.Processor }}</td>
+      <td>{{ Lab7A.RAM }}</td>
+      <td>{{ Lab7A.HardDisk }}</td>
+      <td>{{ Lab7A.MotherBoard }}</td>
+      <td>{{ Lab7A.Basic_OS }}</td>
+      <td>{{ Lab7A.SpecialPurpose }}</td>
+      <td>{{ Lab7A.DateOfPurchase }}</td>
+      <td>{{ Lab7A.WorkingStatus }}</td>
+    </tr>
+    {% endfor %}
+  </table>
 
 </body>
 {% endblock body%}

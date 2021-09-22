@@ -1,7 +1,6 @@
 from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
-from .models import AllLabinfo, Lab7A, Lab7A_SW_Inst, Lab7B_SW_Inst, Lab7C_SW_Inst, Lab7D_SW_Inst, Lab7E_SW_Inst, Lab7B, Lab7C, Lab7D, Lab7E, tt_file, lab_ready_cert
-
+from .models import *
 # Register your models here.
 
 @admin.register(AllLabinfo)
@@ -46,6 +45,86 @@ class Lab7Dswinfo(ImportExportModelAdmin):
 
 @admin.register(Lab7E_SW_Inst)
 class Lab7Eswinfo(ImportExportModelAdmin):
+    list_display = ('SoftwareInstalled', 'Version')
+
+@admin.register(Lab5A)
+class Lab5Ainfo(ImportExportModelAdmin):
+    list_display = ('ComputerName', 'Processor', 'RAM', 'HardDisk', 'MotherBoard', 'Basic_OS', 'SpecialPurpose', 'DateOfPurchase', 'WorkingStatus')
+
+@admin.register(Lab5B)
+class Lab5Binfo(ImportExportModelAdmin):
+    list_display = ('ComputerName', 'Processor', 'RAM', 'HardDisk', 'MotherBoard', 'Basic_OS', 'SpecialPurpose', 'DateOfPurchase', 'WorkingStatus')
+
+@admin.register(Lab5C)
+class Lab5Cinfo(ImportExportModelAdmin):
+    list_display = ('ComputerName', 'Processor', 'RAM', 'HardDisk', 'MotherBoard', 'Basic_OS', 'SpecialPurpose', 'DateOfPurchase', 'WorkingStatus')
+
+@admin.register(Lab5D)
+class Lab5Dinfo(ImportExportModelAdmin):
+    list_display = ('ComputerName', 'Processor', 'RAM', 'HardDisk', 'MotherBoard', 'Basic_OS', 'SpecialPurpose', 'DateOfPurchase', 'WorkingStatus')
+
+@admin.register(Lab5E)
+class Lab5Einfo(ImportExportModelAdmin):
+    list_display = ('ComputerName', 'Processor', 'RAM', 'HardDisk', 'MotherBoard', 'Basic_OS', 'SpecialPurpose', 'DateOfPurchase', 'WorkingStatus')
+
+@admin.register(Lab5A_SW_Inst)
+class Lab5Aswinfo(ImportExportModelAdmin):
+    list_display = ('SoftwareInstalled', 'Version')
+
+@admin.register(Lab5B_SW_Inst)
+class Lab5Bswinfo(ImportExportModelAdmin):
+    list_display = ('SoftwareInstalled', 'Version')
+
+@admin.register(Lab5C_SW_Inst)
+class Lab5Cswinfo(ImportExportModelAdmin):
+    list_display = ('SoftwareInstalled', 'Version')
+
+@admin.register(Lab5D_SW_Inst)
+class Lab5Dswinfo(ImportExportModelAdmin):
+    list_display = ('SoftwareInstalled', 'Version')
+
+@admin.register(Lab5E_SW_Inst)
+class Lab5Eswinfo(ImportExportModelAdmin):
+    list_display = ('SoftwareInstalled', 'Version')
+
+@admin.register(Lab11A)
+class Lab11Ainfo(ImportExportModelAdmin):
+    list_display = ('ComputerName', 'Processor', 'RAM', 'HardDisk', 'MotherBoard', 'Basic_OS', 'SpecialPurpose', 'DateOfPurchase', 'WorkingStatus')
+
+@admin.register(Lab11B)
+class Lab11Binfo(ImportExportModelAdmin):
+    list_display = ('ComputerName', 'Processor', 'RAM', 'HardDisk', 'MotherBoard', 'Basic_OS', 'SpecialPurpose', 'DateOfPurchase', 'WorkingStatus')
+
+@admin.register(Lab11A_SW_Inst)
+class Lab11Aswinfo(ImportExportModelAdmin):
+    list_display = ('SoftwareInstalled', 'Version')
+
+@admin.register(Lab11B_SW_Inst)
+class Lab11Bswinfo(ImportExportModelAdmin):
+    list_display = ('SoftwareInstalled', 'Version')
+
+@admin.register(LabCC1)
+class Lab11Ainfo(ImportExportModelAdmin):
+    list_display = ('ComputerName', 'Processor', 'RAM', 'HardDisk', 'MotherBoard', 'Basic_OS', 'SpecialPurpose', 'DateOfPurchase', 'WorkingStatus')
+
+@admin.register(LabCC2)
+class Lab11Ainfo(ImportExportModelAdmin):
+    list_display = ('ComputerName', 'Processor', 'RAM', 'HardDisk', 'MotherBoard', 'Basic_OS', 'SpecialPurpose', 'DateOfPurchase', 'WorkingStatus')
+
+@admin.register(LabCC3)
+class Lab11Ainfo(ImportExportModelAdmin):
+    list_display = ('ComputerName', 'Processor', 'RAM', 'HardDisk', 'MotherBoard', 'Basic_OS', 'SpecialPurpose', 'DateOfPurchase', 'WorkingStatus')
+
+@admin.register(LabCC1_SW_Inst)
+class LabCC1swinfo(ImportExportModelAdmin):
+    list_display = ('SoftwareInstalled', 'Version')
+
+@admin.register(LabCC2_SW_Inst)
+class LabCC2swinfo(ImportExportModelAdmin):
+    list_display = ('SoftwareInstalled', 'Version')
+
+@admin.register(LabCC3_SW_Inst)
+class LabCC3swinfo(ImportExportModelAdmin):
     list_display = ('SoftwareInstalled', 'Version')
 
 admin.site.register(tt_file)
