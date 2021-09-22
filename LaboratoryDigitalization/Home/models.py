@@ -3,6 +3,15 @@ from django.db import models
 
 # Create your models here.
 
+class Slot_Booking(models.Model):
+    event_name = models.CharField(max_length=100)
+    lab_no = models.CharField(max_length=10)
+    slot_time = models.TimeField()
+    slot_date = models.DateField()
+    booked_by = models.CharField(max_length=100)
+    def __str__(self):
+        return self.event_name
+
 class AllLabinfo(models.Model):
     Lab = models.CharField(max_length=20, unique=True, )
     NumberofPCs = models.IntegerField()
@@ -10,11 +19,6 @@ class AllLabinfo(models.Model):
     PCspurchasedinYr =models.CharField(max_length=30, null = True)
     OS = models.CharField(max_length=75, null = True)
     SpecialSoftware=models.CharField(max_length=100, null = True)
-    # def __str__(self):
-    #     return self.cod+" "+self.nume
-    # class Meta:
-    #     ordering = ["cod"]
-    #     verbose_name_plural = "uploads"
 
 #LAB 7
 class Lab7A(models.Model):

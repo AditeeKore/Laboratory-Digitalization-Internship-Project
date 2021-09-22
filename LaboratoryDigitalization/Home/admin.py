@@ -130,3 +130,5 @@ class LabCC3swinfo(ImportExportModelAdmin):
 admin.site.register(tt_file)
 
 admin.site.register(lab_ready_cert)
+
+admin.site.register(Slot_Booking)

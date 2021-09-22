@@ -272,3 +272,15 @@ def lab_cert(request):
 class UploadFileForm(forms.Form):
     file = forms.FileField()
 
+def booking(request):
+    dropdown=User.objects.all()
+    if request.method == "POST":
+        event_name = request.POST.get('event_name')
+        lab_no = request.POST.get('lab_no')
+        slot_time = request.POST.get('slot_time')
+        slot_date = request.POST.get('slot_date')
+        booked_by = request.POST.get('booked_by')
+        booking = Slot_Booking(event_name=event_name, lab_no=lab_no, slot_time=slot_time, slot_date=slot_date, booked_by=booked_by)
+        booking.save()
+        messages.success(request, 'Your slot is saved')
+    return render(request, 'booking.html')
