@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{%block title%}INFT {% endblock title%}
+{%block body%}
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+ 
+}
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  background-color: #5F9EA0
+}
+
+//tr:nth-child(even) {
+  background-color: #dddddd;
+}
+tr:hover {background-color: #E6E6FA;
+}
+
+</style>
+
+<body>
+
+<h3 align='center'>LAB 11B</h3>
+<table>
+  <tr>
+    <th>Computer Name</th>
+    <th>Processor</th>
+    <th>RAM</th>
+    <th>Hard Disk</th>
+    <th>Motherboard</th>
+    <th>Basic OS</th>
+    <th>Special Purpose</th>
+    <th>Date of Purchase</th>
+    <th>Working Status</th>
+  </tr>
+
+  {% for Lab11B in lab11B_pc_list %}
+  <tr>
+    <td>{{ Lab11B.ComputerName }}</td>
+    <td>{{ Lab11B.Processor }}</td>
+    <td>{{ Lab11B.RAM }}</td>
+    <td>{{ Lab11B.HardDisk }}</td>
+    <td>{{ Lab11B.MotherBoard }}</td>
+    <td>{{ Lab11B.Basic_OS }}</td>
+    <td>{{ Lab11B.SpecialPurpose }}</td>
+    <td>{{ Lab11B.DateOfPurchase }}</td>
+    <td>{{ Lab11B.WorkingStatus }}</td>
+  </tr>  
+  {% endfor %}
+</table>
+
+</body>
+{% endblock body%}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{%block title%}LAB11A SW {% endblock title%}
+{%block body%}
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+<body>
+<h3 align='center'>LAB 11A Softwares Installed</h3>
+<table>
+  <tr>
+    <th>SoftwareInstalled</th>
+    <th>Version</th>
+  </tr>
+
+  {% for Lab11A_SW_Inst in lab11ainfo_list %}
+  <tr>
+    <td>{{ Lab11A_SW_Inst.SoftwareInstalled }}</td>
+    <td>{{ Lab11A_SW_Inst.Version }}</td>
+  </tr>  
+  {% endfor %}
+</table>
+
+</body>
+{% endblock body%}
