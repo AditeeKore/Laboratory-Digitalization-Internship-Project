@@ -75,6 +75,7 @@ urlpatterns = [
     path("lab_cert", views.lab_cert, name='lab_cert'),
     path("timetable", views.timetable, name='timetable'),
     path("booking", views.booking, name='booking'),
+    path("display_slot", views.display_slot, name='display_slot'),
     
 
 ]

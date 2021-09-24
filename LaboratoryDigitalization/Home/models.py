@@ -3,10 +3,23 @@ from django.db import models
 
 # Create your models here.
 
+class Lab5A_tt_booking(models.Model):
+    TIME = models.CharField(max_length=20)
+    MONDAY = models.CharField(max_length=20)
+    TUESDAY = models.CharField(max_length=20)
+    WEDNESDAY = models.CharField(max_length=20)
+    THURSDAY = models.CharField(max_length=20)
+    FRIDAY = models.CharField(max_length=20)
+    SATURDAY = models.CharField(max_length=20)
+
+class Booking_Labs(models.Model):
+    main_lab_name = models.CharField(max_length=20)
+    sub_lab_name = models.CharField(max_length=10)
+
 class Slot_Booking(models.Model):
     event_name = models.CharField(max_length=100)
     lab_no = models.CharField(max_length=10)
-    slot_time = models.TimeField()
+    slot_time = models.CharField(max_length=100)
     slot_date = models.DateField()
     booked_by = models.CharField(max_length=100)
     def __str__(self):

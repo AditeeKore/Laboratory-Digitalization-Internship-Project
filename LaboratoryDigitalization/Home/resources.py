@@ -1,5 +1,5 @@
 from import_export import resources
-from .models import AllLabinfo, Lab7A, Lab7A_SW_Inst, Lab7B, Lab7B_SW_Inst, Lab7C, Lab7C_SW_Inst, Lab7D, Lab7D_SW_Inst,  Lab7E, Lab7E_SW_Inst, tt_file
+from .models import *
 
 class uploadresource(resources.ModelResource):
     class meta:
@@ -14,4 +14,5 @@ class uploadresource(resources.ModelResource):
         model = Lab7C_SW_Inst
         model = Lab7D_SW_Inst
         model = Lab7E_SW_Inst
-        # model = tt_file
+        model = Lab5A_tt_booking
+        

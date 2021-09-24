@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{%block title%}About{% endblock title%}
+{%block body%}
+
+<style>
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+
+  }
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    background-color: #5F9EA0
+  }
+  //tr:nth-child(even) {
+  background-color: #dddddd;
+  }
+  tr:hover {
+    background-color: #E6E6FA;
+  }
+</style>
+
+<body>
+<div class="pt-4">
+<table>
+
+<tr>
+<th>Event Name</th>
+<th>Lab No</th>
+<th>Date</th>
+<th>Time</th>
+<th>Booked by</th>
+</tr>
+
+{% for Slot_Booking in lab_booking %}
+
+<tr>
+<td>{{ Slot_Booking.event_name}}
+<td>{{ Slot_Booking.lab_no}}
+<td>{{ Slot_Booking.slot_date}}
+<td>{{ Slot_Booking.slot_time}}
+<td>{{ Slot_Booking.booked_by}}
+</tr>
+{% endfor %}
+
+</table>
+</div>
+
+</body>
+
+
+
+
+
+{% comment %} <body>
+<table>
+    <tr>
+    <th>Time</th>
+    <th>Monday</th>
+    <th>Tuesday</th>
+    <th>Wednesday</th>
+    <th>Thursday</th>
+    <th>Friday</th>
+    <th>Saturday</th>
+    </th>
+{% for Lab5A_tt_booking in lab5a_tt_booking %}
+
+    <tr>
+    <td>{{ Lab5A_tt_booking.TIME }}</td>
+    <td
+    {% if Lab5A_tt_booking.MONDAY == 'Book' %}
+    <a href='/index'>test</a>
+    {% else %}
+    {{ Lab5A_tt_booking.MONDAY }}   
+    {% endif %}> {% endcomment %}
+    {% comment %} {{ Lab5A_tt_booking.MONDAY }}    {% endcomment %}
+     {% comment %} </td> 
+    <td> {{ Lab5A_tt_booking.MONDAY }} </td>
+    <td>{{ Lab5A_tt_booking.TUESDAY }}</td>
+    <td>{{ Lab5A_tt_booking.WEDNESDAY }}</td>
+    <td>{{ Lab5A_tt_booking.THURSDAY }}</td>
+    <td>{{ Lab5A_tt_booking.FRIDAY }}</td>
+    <td><a href="/index">{{ Lab5A_tt_booking.SATURDAY }}</a></td>
+    </tr>
+
+{% endfor %}
+</table>
+
+
+</body>  {% endcomment %}
+
+
+{% endblock body%}

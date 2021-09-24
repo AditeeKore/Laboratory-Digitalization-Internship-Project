@@ -2,13 +2,12 @@
 
 {%block title%}Upload {% endblock title%}
 {%block body%}
-<div class="container ps-4 pt-5">
-<h3>Upload Lab Readyness Certificate</h3>
-<form method="post" enctype="multipart/form-data">
-{% csrf_token %}
-{{ form }}
-<button type="submit" class="btn btn-primary">Upload</button>
-</form> 
+<div class="container ps-4 pt-5 ml-4">
+    <h3>Upload Lab Readiness Certificate</h3>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
 </div>
 {% endblock %}
-

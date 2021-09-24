@@ -262,18 +262,28 @@ def lab11bcompinfo(request):
     return render(request, 'lab11bcompinfo.html', {'lab11b_pc_list': lab11b_pc_list}) 
 
 def timetable(request):
-    timetable_file = tt_file.objects.all()
+    timetable_file = tt_file.objects.all().order_by('lab_no')
     return render(request, 'timetable.html', {'timetable_file': timetable_file})
 
 def lab_cert(request):
-    cert_file = lab_ready_cert.objects.all()
+    cert_file = lab_ready_cert.objects.all().order_by('lab_no')
     return render(request, 'lab_cert.html', {'cert_file': cert_file})  
 
 class UploadFileForm(forms.Form):
     file = forms.FileField()
 
+def availibility(request, lab_no, slot_date, slot_time):
+        booking_list = Slot_Booking.objects.filter(lab_no=lab_no,slot_date=slot_date, slot_time=slot_time)
+        for booking in booking_list:
+            if booking.lab_no == lab_no and booking.slot_date == slot_date and booking.slot_time == slot_time:
+                messages.warning(request, 'This slot is already booked, please book another slot')
+            else:
+                booking()
+        return render(request, 'booking.html', {'booking_list':booking_list})    
+
 def booking(request):
     dropdown=User.objects.all()
+    dropdown_2=Booking_Labs.objects.all()
     if request.method == "POST":
         event_name = request.POST.get('event_name')
         lab_no = request.POST.get('lab_no')
@@ -283,4 +293,11 @@ def booking(request):
         booking = Slot_Booking(event_name=event_name, lab_no=lab_no, slot_time=slot_time, slot_date=slot_date, booked_by=booked_by)
         booking.save()
         messages.success(request, 'Your slot is saved')
-    return render(request, 'booking.html')
+        return redirect('/index')
+    return render(request, 'booking.html', {'User': dropdown, 'Booking_Labs': dropdown_2})
+
+def display_slot(request):
+    lab_booking = Slot_Booking.objects.all().order_by('lab_no')
+    return render(request, 'display_slot.html', {'lab_booking': lab_booking})
+
+    

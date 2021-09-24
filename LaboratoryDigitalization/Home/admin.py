@@ -127,8 +127,14 @@ class LabCC2swinfo(ImportExportModelAdmin):
 class LabCC3swinfo(ImportExportModelAdmin):
     list_display = ('SoftwareInstalled', 'Version')
 
+@admin.register(Lab5A_tt_booking)
+class Lab5A_tt_booking(ImportExportModelAdmin):
+    list_display = ('TIME', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY')
+
 admin.site.register(tt_file)
 
 admin.site.register(lab_ready_cert)
 
 admin.site.register(Slot_Booking)
+
+admin.site.register(Booking_Labs)
