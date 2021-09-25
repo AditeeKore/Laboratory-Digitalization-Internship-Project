@@ -1,3 +1,4 @@
+from Home.availability import availibility
 from django.contrib.messages.api import warning
 from django.shortcuts import redirect, render, HttpResponse
 from django.http import HttpResponseBadRequest
@@ -272,14 +273,7 @@ def lab_cert(request):
 class UploadFileForm(forms.Form):
     file = forms.FileField()
 
-def availibility(request, lab_no, slot_date, slot_time):
-        booking_list = Slot_Booking.objects.filter(lab_no=lab_no,slot_date=slot_date, slot_time=slot_time)
-        for booking in booking_list:
-            if booking.lab_no == lab_no and booking.slot_date == slot_date and booking.slot_time == slot_time:
-                messages.warning(request, 'This slot is already booked, please book another slot')
-            else:
-                booking()
-        return render(request, 'booking.html', {'booking_list':booking_list})    
+
 
 def booking(request):
     dropdown=User.objects.all()
@@ -291,6 +285,10 @@ def booking(request):
         slot_date = request.POST.get('slot_date')
         booked_by = request.POST.get('booked_by')
         booking = Slot_Booking(event_name=event_name, lab_no=lab_no, slot_time=slot_time, slot_date=slot_date, booked_by=booked_by)
+        if availibility(lab_no, slot_date, slot_time ):
+            messages.warning(request, 'This slot is already booked, please book another slot')
+            return redirect('/booking')
+
         booking.save()
         messages.success(request, 'Your slot is saved')
         return redirect('/index')
@@ -299,5 +297,35 @@ def booking(request):
 def display_slot(request):
     lab_booking = Slot_Booking.objects.all().order_by('lab_no')
     return render(request, 'display_slot.html', {'lab_booking': lab_booking})
+
+def lab5_tt(request):
+    lab5a_tt_list = Lab5A_tt_booking.objects.all()
+    lab5b_tt_list = Lab5B_tt_booking.objects.all()
+    lab5c_tt_list = Lab5C_tt_booking.objects.all()
+    lab5d_tt_list = Lab5D_tt_booking.objects.all()
+    lab5e_tt_list = Lab5E_tt_booking.objects.all()
+    return render(request, 'lab5_tt.html', {'lab5a_tt_list':lab5a_tt_list, 'lab5b_tt_list':lab5b_tt_list, 'lab5c_tt_list':lab5c_tt_list, 'lab5d_tt_list':lab5d_tt_list, 'lab5e_tt_list':lab5e_tt_list})
+
+def lab7_tt(request):
+    lab7a_tt_list = Lab7A_tt_booking.objects.all()
+    lab7b_tt_list = Lab7B_tt_booking.objects.all()
+    lab7c_tt_list = Lab7C_tt_booking.objects.all()
+    lab7d_tt_list = Lab7D_tt_booking.objects.all()
+    lab7e_tt_list = Lab7E_tt_booking.objects.all()
+    return render(request, 'lab7_tt.html', {'lab7a_tt_list':lab7a_tt_list, 'lab7b_tt_list':lab7b_tt_list, 'lab7c_tt_list':lab7c_tt_list, 'lab7d_tt_list':lab7d_tt_list, 'lab7e_tt_list':lab7e_tt_list})
+
+def lab11_tt(request):
+    lab11a_tt_list = Lab11A_tt_booking.objects.all()
+    lab11b_tt_list = Lab11B_tt_booking.objects.all()
+    return render(request, 'lab11_tt.html', {'lab11a_tt_list':lab11a_tt_list, 'lab11b_tt_list':lab11b_tt_list})
+
+def labcc_tt(request):
+    labcc1_tt_list = LabCC1_tt_booking.objects.all()
+    labcc2_tt_list = LabCC2_tt_booking.objects.all()
+    labcc3_tt_list = LabCC3_tt_booking.objects.all()
+    return render(request, 'labcc_tt.html', {'labcc1_tt_list':labcc1_tt_list, 'labcc2_tt_list':labcc2_tt_list, 'labcc3_tt_list':labcc3_tt_list})
+
+
+
 
     

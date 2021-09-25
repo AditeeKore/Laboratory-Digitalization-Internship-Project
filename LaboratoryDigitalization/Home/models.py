@@ -3,7 +3,134 @@ from django.db import models
 
 # Create your models here.
 
+#lab timetables
 class Lab5A_tt_booking(models.Model):
+    TIME = models.CharField(max_length=20)
+    MONDAY = models.CharField(max_length=20)
+    TUESDAY = models.CharField(max_length=20)
+    WEDNESDAY = models.CharField(max_length=20)
+    THURSDAY = models.CharField(max_length=20)
+    FRIDAY = models.CharField(max_length=20)
+    SATURDAY = models.CharField(max_length=20)
+
+class Lab5B_tt_booking(models.Model):
+    TIME = models.CharField(max_length=20)
+    MONDAY = models.CharField(max_length=20)
+    TUESDAY = models.CharField(max_length=20)
+    WEDNESDAY = models.CharField(max_length=20)
+    THURSDAY = models.CharField(max_length=20)
+    FRIDAY = models.CharField(max_length=20)
+    SATURDAY = models.CharField(max_length=20)
+
+class Lab5C_tt_booking(models.Model):
+    TIME = models.CharField(max_length=20)
+    MONDAY = models.CharField(max_length=20)
+    TUESDAY = models.CharField(max_length=20)
+    WEDNESDAY = models.CharField(max_length=20)
+    THURSDAY = models.CharField(max_length=20)
+    FRIDAY = models.CharField(max_length=20)
+    SATURDAY = models.CharField(max_length=20)
+
+class Lab5D_tt_booking(models.Model):
+    TIME = models.CharField(max_length=20)
+    MONDAY = models.CharField(max_length=20)
+    TUESDAY = models.CharField(max_length=20)
+    WEDNESDAY = models.CharField(max_length=20)
+    THURSDAY = models.CharField(max_length=20)
+    FRIDAY = models.CharField(max_length=20)
+    SATURDAY = models.CharField(max_length=20)
+
+class Lab5E_tt_booking(models.Model):
+    TIME = models.CharField(max_length=20)
+    MONDAY = models.CharField(max_length=20)
+    TUESDAY = models.CharField(max_length=20)
+    WEDNESDAY = models.CharField(max_length=20)
+    THURSDAY = models.CharField(max_length=20)
+    FRIDAY = models.CharField(max_length=20)
+    SATURDAY = models.CharField(max_length=20)
+
+class Lab7A_tt_booking(models.Model):
+    TIME = models.CharField(max_length=20)
+    MONDAY = models.CharField(max_length=20)
+    TUESDAY = models.CharField(max_length=20)
+    WEDNESDAY = models.CharField(max_length=20)
+    THURSDAY = models.CharField(max_length=20)
+    FRIDAY = models.CharField(max_length=20)
+    SATURDAY = models.CharField(max_length=20)
+
+class Lab7B_tt_booking(models.Model):
+    TIME = models.CharField(max_length=20)
+    MONDAY = models.CharField(max_length=20)
+    TUESDAY = models.CharField(max_length=20)
+    WEDNESDAY = models.CharField(max_length=20)
+    THURSDAY = models.CharField(max_length=20)
+    FRIDAY = models.CharField(max_length=20)
+    SATURDAY = models.CharField(max_length=20)
+
+class Lab7C_tt_booking(models.Model):
+    TIME = models.CharField(max_length=20)
+    MONDAY = models.CharField(max_length=20)
+    TUESDAY = models.CharField(max_length=20)
+    WEDNESDAY = models.CharField(max_length=20)
+    THURSDAY = models.CharField(max_length=20)
+    FRIDAY = models.CharField(max_length=20)
+    SATURDAY = models.CharField(max_length=20)
+
+class Lab7D_tt_booking(models.Model):
+    TIME = models.CharField(max_length=20)
+    MONDAY = models.CharField(max_length=20)
+    TUESDAY = models.CharField(max_length=20)
+    WEDNESDAY = models.CharField(max_length=20)
+    THURSDAY = models.CharField(max_length=20)
+    FRIDAY = models.CharField(max_length=20)
+    SATURDAY = models.CharField(max_length=20)
+
+class Lab7E_tt_booking(models.Model):
+    TIME = models.CharField(max_length=20)
+    MONDAY = models.CharField(max_length=20)
+    TUESDAY = models.CharField(max_length=20)
+    WEDNESDAY = models.CharField(max_length=20)
+    THURSDAY = models.CharField(max_length=20)
+    FRIDAY = models.CharField(max_length=20)
+    SATURDAY = models.CharField(max_length=20)
+
+class Lab11A_tt_booking(models.Model):
+    TIME = models.CharField(max_length=20)
+    MONDAY = models.CharField(max_length=20)
+    TUESDAY = models.CharField(max_length=20)
+    WEDNESDAY = models.CharField(max_length=20)
+    THURSDAY = models.CharField(max_length=20)
+    FRIDAY = models.CharField(max_length=20)
+    SATURDAY = models.CharField(max_length=20)
+
+class Lab11B_tt_booking(models.Model):
+    TIME = models.CharField(max_length=20)
+    MONDAY = models.CharField(max_length=20)
+    TUESDAY = models.CharField(max_length=20)
+    WEDNESDAY = models.CharField(max_length=20)
+    THURSDAY = models.CharField(max_length=20)
+    FRIDAY = models.CharField(max_length=20)
+    SATURDAY = models.CharField(max_length=20)
+
+class LabCC1_tt_booking(models.Model):
+    TIME = models.CharField(max_length=20)
+    MONDAY = models.CharField(max_length=20)
+    TUESDAY = models.CharField(max_length=20)
+    WEDNESDAY = models.CharField(max_length=20)
+    THURSDAY = models.CharField(max_length=20)
+    FRIDAY = models.CharField(max_length=20)
+    SATURDAY = models.CharField(max_length=20)
+
+class LabCC2_tt_booking(models.Model):
+    TIME = models.CharField(max_length=20)
+    MONDAY = models.CharField(max_length=20)
+    TUESDAY = models.CharField(max_length=20)
+    WEDNESDAY = models.CharField(max_length=20)
+    THURSDAY = models.CharField(max_length=20)
+    FRIDAY = models.CharField(max_length=20)
+    SATURDAY = models.CharField(max_length=20)
+
+class LabCC3_tt_booking(models.Model):
     TIME = models.CharField(max_length=20)
     MONDAY = models.CharField(max_length=20)
     TUESDAY = models.CharField(max_length=20)

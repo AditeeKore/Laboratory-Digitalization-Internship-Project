@@ -76,6 +76,11 @@ urlpatterns = [
     path("timetable", views.timetable, name='timetable'),
     path("booking", views.booking, name='booking'),
     path("display_slot", views.display_slot, name='display_slot'),
+
+    path("lab5_tt", views.lab5_tt, name='lab5_tt'),
+    path("lab7_tt", views.lab7_tt, name='lab7_tt'),
+    path("lab11_tt", views.lab11_tt, name='lab11_tt'),
+    path("labcc_tt", views.labcc_tt, name='labcc_tt'),
     
 
 ]

@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+
+{%block title%}Lab 5A Timetable{% endblock title%}
+{%block body%}
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 90%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+
+    }
+
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        background-color: #5F9EA0
+    }
+
+    //tr:nth-child(even) {
+    background-color: #dddddd;
+    }
+
+    tr:hover {
+        background-color: #E6E6FA;
+    }
+</style>
+
+<body>
+
+    <h4>Want to book a slot?<a href="/booking">Click here</a></h4>
+
+    <h3 align='center'>LAB 5A</h3>
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            </th>
+            {% for Lab5A_tt_booking in lab5a_tt_booking %}
+        <tr>
+            <td>{{ Lab5A_tt_booking.TIME }}</td>
+            <td>{{ Lab5A_tt_booking.MONDAY }} </td>
+            <td>{{ Lab5A_tt_booking.MONDAY }} </td>
+            <td>{{ Lab5A_tt_booking.TUESDAY }}</td>
+            <td>{{ Lab5A_tt_booking.WEDNESDAY }}</td>
+            <td>{{ Lab5A_tt_booking.THURSDAY }}</td>
+            <td>{{ Lab5A_tt_booking.FRIDAY }}</td>
+            <td>{{ Lab5A_tt_booking.SATURDAY }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h3 align='center'>LAB 5B</h3>
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            </th>
+            {% for Lab5B_tt_booking in lab5B_tt_booking %}
+        <tr>
+            <td>{{ Lab5B_tt_booking.TIME }}</td>
+            <td>{{ Lab5B_tt_booking.MONDAY }} </td>
+            <td>{{ Lab5B_tt_booking.MONDAY }} </td>
+            <td>{{ Lab5B_tt_booking.TUESDAY }}</td>
+            <td>{{ Lab5B_tt_booking.WEDNESDAY }}</td>
+            <td>{{ Lab5B_tt_booking.THURSDAY }}</td>
+            <td>{{ Lab5B_tt_booking.FRIDAY }}</td>
+            <td>{{ Lab5B_tt_booking.SATURDAY }}</td>
+        </tr>
+
+        {% endfor %}
+    </table>
+
+    <h3 align='center'>LAB 5C</h3>
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            </th>
+            {% for Lab5C_tt_booking in lab5c_tt_booking %}
+        <tr>
+            <td>{{ Lab5C_tt_booking.TIME }}</td>
+            <td>{{ Lab5C_tt_booking.MONDAY }} </td>
+            <td>{{ Lab5C_tt_booking.MONDAY }} </td>
+            <td>{{ Lab5C_tt_booking.TUESDAY }}</td>
+            <td>{{ Lab5C_tt_booking.WEDNESDAY }}</td>
+            <td>{{ Lab5C_tt_booking.THURSDAY }}</td>
+            <td>{{ Lab5C_tt_booking.FRIDAY }}</td>
+            <td>{{ Lab5C_tt_booking.SATURDAY }}</td>
+        </tr>
+
+        {% endfor %}
+    </table>
+
+    <h3 align='center'>LAB 5D</h3>
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            </th>
+            {% for Lab5D_tt_booking in lab5d_tt_booking %}
+        <tr>
+            <td>{{ Lab5D_tt_booking.TIME }}</td>
+            <td>{{ Lab5D_tt_booking.MONDAY }} </td>
+            <td>{{ Lab5D_tt_booking.MONDAY }} </td>
+            <td>{{ Lab5D_tt_booking.TUESDAY }}</td>
+            <td>{{ Lab5D_tt_booking.WEDNESDAY }}</td>
+            <td>{{ Lab5D_tt_booking.THURSDAY }}</td>
+            <td>{{ Lab5D_tt_booking.FRIDAY }}</td>
+            <td>{{ Lab5D_tt_booking.SATURDAY }}</td>
+        </tr>
+
+        {% endfor %}
+    </table>
+
+    <h3 align='center'>LAB 5C</h3>
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            </th>
+            {% for Lab5E_tt_booking in lab5e_tt_booking %}
+        <tr>
+            <td>{{ Lab5E_tt_booking.TIME }}</td>
+            <td>{{ Lab5E_tt_booking.MONDAY }} </td>
+            <td>{{ Lab5E_tt_booking.MONDAY }} </td>
+            <td>{{ Lab5E_tt_booking.TUESDAY }}</td>
+            <td>{{ Lab5E_tt_booking.WEDNESDAY }}</td>
+            <td>{{ Lab5E_tt_booking.THURSDAY }}</td>
+            <td>{{ Lab5E_tt_booking.FRIDAY }}</td>
+            <td>{{ Lab5E_tt_booking.SATURDAY }}</td>
+        </tr>
+
+        {% endfor %}
+    </table>
+
+    {% endblock body%}
+</body>

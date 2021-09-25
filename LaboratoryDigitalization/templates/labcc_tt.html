@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+{%block title%}Lab CC1 Timetable{% endblock title%}
+{%block body%}
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 90%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+
+    }
+
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        background-color: #5F9EA0
+    }
+
+    //tr:nth-child(even) {
+    background-color: #dddddd;
+    }
+
+    tr:hover {
+        background-color: #E6E6FA;
+    }
+</style>
+
+<body>
+
+    <h3 align='center'>LAB CC1</h3>
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            </th>
+            {% for LabCC1_tt_booking in labCC1_tt_booking %}
+        <tr>
+            <td>{{ LabCC1_tt_booking.TIME }}</td>
+            <td>{{ LabCC1_tt_booking.MONDAY }} </td>
+            <td>{{ LabCC1_tt_booking.MONDAY }} </td>
+            <td>{{ LabCC1_tt_booking.TUESDAY }}</td>
+            <td>{{ LabCC1_tt_booking.WEDNESDAY }}</td>
+            <td>{{ LabCC1_tt_booking.THURSDAY }}</td>
+            <td>{{ LabCC1_tt_booking.FRIDAY }}</td>
+            <td>{{ LabCC1_tt_booking.SATURDAY }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h3 align='center'>LAB CC2</h3>
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            </th>
+            {% for LabCC2_tt_booking in labCC2_tt_booking %}
+        <tr>
+            <td>{{ LabCC2_tt_booking.TIME }}</td>
+            <td>{{ LabCC2_tt_booking.MONDAY }} </td>
+            <td>{{ LabCC2_tt_booking.MONDAY }} </td>
+            <td>{{ LabCC2_tt_booking.TUESDAY }}</td>
+            <td>{{ LabCC2_tt_booking.WEDNESDAY }}</td>
+            <td>{{ LabCC2_tt_booking.THURSDAY }}</td>
+            <td>{{ LabCC2_tt_booking.FRIDAY }}</td>
+            <td>{{ LabCC2_tt_booking.SATURDAY }}</td>
+        </tr>
+
+        {% endfor %}
+    </table>
+
+    <h3 align='center'>LAB CC3</h3>
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            </th>
+            {% for LabCC3_tt_booking in labCC3_tt_booking %}
+        <tr>
+            <td>{{ LabCC3_tt_booking.TIME }}</td>
+            <td>{{ LabCC3_tt_booking.MONDAY }} </td>
+            <td>{{ LabCC3_tt_booking.MONDAY }} </td>
+            <td>{{ LabCC3_tt_booking.TUESDAY }}</td>
+            <td>{{ LabCC3_tt_booking.WEDNESDAY }}</td>
+            <td>{{ LabCC3_tt_booking.THURSDAY }}</td>
+            <td>{{ LabCC3_tt_booking.FRIDAY }}</td>
+            <td>{{ LabCC3_tt_booking.SATURDAY }}</td>
+        </tr>
+
+        {% endfor %}
+    </table>
+
+    
+    {% endblock body%}
+</body>

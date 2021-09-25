@@ -131,6 +131,58 @@ class LabCC3swinfo(ImportExportModelAdmin):
 class Lab5A_tt_booking(ImportExportModelAdmin):
     list_display = ('TIME', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY')
 
+@admin.register(Lab5B_tt_booking)
+class Lab5A_tt_booking(ImportExportModelAdmin):
+    list_display = ('TIME', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY')
+
+@admin.register(Lab5D_tt_booking)
+class Lab5A_tt_booking(ImportExportModelAdmin):
+    list_display = ('TIME', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY')
+
+@admin.register(Lab5E_tt_booking)
+class Lab5A_tt_booking(ImportExportModelAdmin):
+    list_display = ('TIME', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY')
+
+@admin.register(Lab7A_tt_booking)
+class Lab5A_tt_booking(ImportExportModelAdmin):
+    list_display = ('TIME', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY')
+
+@admin.register(Lab7B_tt_booking)
+class Lab5A_tt_booking(ImportExportModelAdmin):
+    list_display = ('TIME', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY')
+
+@admin.register(Lab7C_tt_booking)
+class Lab5A_tt_booking(ImportExportModelAdmin):
+    list_display = ('TIME', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY')
+
+@admin.register(Lab7D_tt_booking)
+class Lab5A_tt_booking(ImportExportModelAdmin):
+    list_display = ('TIME', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY')
+
+@admin.register(Lab7E_tt_booking)
+class Lab5A_tt_booking(ImportExportModelAdmin):
+    list_display = ('TIME', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY')
+
+@admin.register(Lab11A_tt_booking)
+class Lab5A_tt_booking(ImportExportModelAdmin):
+    list_display = ('TIME', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY')
+
+@admin.register(Lab11B_tt_booking)
+class Lab5A_tt_booking(ImportExportModelAdmin):
+    list_display = ('TIME', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY')
+
+@admin.register(LabCC1_tt_booking)
+class Lab5A_tt_booking(ImportExportModelAdmin):
+    list_display = ('TIME', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY')
+
+@admin.register(LabCC2_tt_booking)
+class Lab5A_tt_booking(ImportExportModelAdmin):
+    list_display = ('TIME', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY')
+
+@admin.register(LabCC3_tt_booking)
+class Lab5A_tt_booking(ImportExportModelAdmin):
+    list_display = ('TIME', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY')
+
 admin.site.register(tt_file)
 
 admin.site.register(lab_ready_cert)
