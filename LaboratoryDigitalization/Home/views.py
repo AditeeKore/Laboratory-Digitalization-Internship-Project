@@ -274,6 +274,7 @@ class UploadFileForm(forms.Form):
     file = forms.FileField()
 
 
+@login_required(login_url='/admin/login/?next=/admin/')
 
 def booking(request):
     dropdown=User.objects.all()
