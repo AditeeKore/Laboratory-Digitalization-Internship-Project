@@ -29,16 +29,16 @@
           <li class="nav-item">
             <a class="nav-link text-white" href="/about">About Us</a>
           </li>
-
+          {% if user.is_authenticated %}
           <li class="nav-item">
             <a class="float-right nav-link text-white " href="/upload">Upload Timetable</a>
-          </li>
+          </li>{% endif %}
           <li class="nav-item">
             <a class="float-right nav-link text-white " href="/timetable">Timetable</a>
-          </li>
+          </li>{% if user.is_authenticated %}
           <li class="nav-item">
             <a class="float-right nav-link text-white " href="/cert_upload">Upload Certificate</a>
-          </li>
+          </li>{% endif %}
           <li class="nav-item">
             <a class="float-right nav-link text-white " href="/lab_cert">Lab Readiness Certificate</a>
           </li>
