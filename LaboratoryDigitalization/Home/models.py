@@ -3,6 +3,38 @@ from django.db import models
 
 # Create your models here.
 
+#Miscellaneous Files
+class Lab5_Miscellaneous(models.Model):
+    Title = models.CharField(max_length=200)
+    File = models.FileField(upload_to='uploads/lab5a_miscellaneous')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.Title
+
+class Lab7_Miscellaneous(models.Model):
+    Title = models.CharField(max_length=200)
+    File = models.FileField(upload_to='uploads/lab7a_miscellaneous')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.Title
+
+class Lab11_Miscellaneous(models.Model):
+    Title = models.CharField(max_length=200)
+    File = models.FileField(upload_to='uploads/lab11_miscellaneous')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.Title
+
+class LabCC_Miscellaneous(models.Model):
+    Title = models.CharField(max_length=200)
+    File = models.FileField(upload_to='uploads/labcc_miscellaneous')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.Title
+
+
+
+
 #lab timetables
 class Lab5A_tt_booking(models.Model):
     TIME = models.CharField(max_length=20)

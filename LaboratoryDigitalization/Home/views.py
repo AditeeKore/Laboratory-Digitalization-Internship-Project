@@ -273,6 +273,21 @@ def lab_cert(request):
 class UploadFileForm(forms.Form):
     file = forms.FileField()
 
+def lab5_miscellaneous(request):
+    lab5_miscellaneous_file = Lab5_Miscellaneous.objects.all().order_by('Title')
+    return render(request, 'lab5miscellaneous.html', {'lab5_miscellaneous_file':lab5_miscellaneous_file})
+
+def lab7_miscellaneous(request):
+    lab7_miscellaneous_file = Lab7_Miscellaneous.objects.all().order_by('Title')
+    return render(request, 'lab7miscellaneous.html', {'lab7_miscellaneous_file':lab7_miscellaneous_file})
+
+def lab11_miscellaneous(request):
+    lab11_miscellaneous_file = Lab11_Miscellaneous.objects.all().order_by('Title')
+    return render(request, 'lab11miscellaneous.html', {'lab11_miscellaneous_file':lab11_miscellaneous_file})
+
+def labcc_miscellaneous(request):
+    labcc_miscellaneous_file = LabCC_Miscellaneous.objects.all().order_by('Title')
+    return render(request, 'labccmiscellaneous.html', {'labcc_miscellaneous_file':labcc_miscellaneous_file})
 
 @login_required(login_url='/admin/login/?next=/admin/')
 

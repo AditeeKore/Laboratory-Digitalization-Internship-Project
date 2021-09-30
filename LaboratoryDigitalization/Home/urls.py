@@ -76,6 +76,10 @@ urlpatterns = [
     path("timetable", views.timetable, name='timetable'),
     path("booking", views.booking, name='booking'),
     path("display_slot", views.display_slot, name='display_slot'),
+    path("lab5miscellaneous", views.lab5_miscellaneous, name='lab5miscellaneous'),
+    path("lab7miscellaneous", views.lab7_miscellaneous, name='lab7miscellaneous'),
+    path("lab11miscellaneous", views.lab11_miscellaneous, name='lab11miscellaneous'),
+    path("labccmiscellaneous", views.labcc_miscellaneous, name='labccmiscellaneous'),
 
     path("lab5_tt", views.lab5_tt, name='lab5_tt'),
     path("lab7_tt", views.lab7_tt, name='lab7_tt'),

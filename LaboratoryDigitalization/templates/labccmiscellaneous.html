@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{%block title%}miscellaneous {% endblock title%}
+{%block body%}
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+th{
+  background-color: #5F9EA0
+}
+tr:hover {
+  background-color: lavender;
+}
+//tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+
+<h1>Lab CC Miscellaneous Files</h1>
+
+<div class="pt-3 pl-4 ps-5 pe-5">
+<table class='table'>
+    <tr>
+        <th>Title</th>
+        <th>File</th>
+    </tr>
+    {% for LabCC_Miscellaneous  in labcc_miscellaneous_file %}
+    <tr>
+        <td>{{ LabCC_Miscellaneous.Title }}</td>
+        <td><a href="{{ LabCC_Miscellaneous.File.url }}" class="btn btn-primary btn-sm" target="_blank">
+        Download file</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</display_slot>
+{% endblock %}

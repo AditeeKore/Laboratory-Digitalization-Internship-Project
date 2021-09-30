@@ -190,3 +190,11 @@ admin.site.register(lab_ready_cert)
 admin.site.register(Slot_Booking)
 
 admin.site.register(Booking_Labs)
+
+admin.site.register(Lab5_Miscellaneous)
+
+admin.site.register(Lab7_Miscellaneous)
+
+admin.site.register(Lab11_Miscellaneous)
+
+admin.site.register(LabCC_Miscellaneous)
